@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 
 export const Clock = () => {
-	const [color, setColor] = useState();
+	const [color, setColor] = useState("red");
+	setInterval(() => {
+		if (color == "green") setColor("yellow");
+		if (color == "yellow") setColor("red");
+		if (color == "red") setColor("green");
+	}, 2000);
+
 	return (
 		<div className="container">
 			<div className="traffic-light">
