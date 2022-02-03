@@ -6,7 +6,7 @@ export const Clock = () => {
 		if (color == "green") setColor("yellow");
 		if (color == "yellow") setColor("red");
 		if (color == "red") setColor("green");
-	}, 2000);
+	}, 3000);
 
 	return (
 		<div className="container">
