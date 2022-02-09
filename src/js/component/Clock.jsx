@@ -10,6 +10,7 @@ export const Clock = () => {
 
 	return (
 		<div className="container">
+			<div className="pole"></div>
 			<div className="traffic-light">
 				<div
 					className={color == "red" ? "red active" : "red"}

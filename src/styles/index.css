@@ -31,3 +31,9 @@
     padding: 10px;
     box-shadow: 0 0 40px white ;
 }
+.pole{
+    background-color: black;
+    width: 20px;
+    height: 100px;
+    margin: auto;
+}
