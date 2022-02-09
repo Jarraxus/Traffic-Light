@@ -2,11 +2,24 @@ import React, { useState } from "react";
 
 export const Clock = () => {
 	const [color, setColor] = useState("red");
-	setInterval(() => {
+	var timer = null;
+	function switchColor() {
 		if (color == "green") setColor("yellow");
 		if (color == "yellow") setColor("red");
 		if (color == "red") setColor("green");
-	}, 3000);
+	}
+	function switchClockStatus() {
+		if (timer == null) {
+			timer = setInterval(switchColor, 3000);
+			console.log(timer);
+		} else {
+			clearInterval(timer);
+			timer = null;
+			console.log(timer);
+		}
+	}
+
+	switchClockStatus();
 
 	return (
 		<div className="container">
@@ -21,6 +34,9 @@ export const Clock = () => {
 				<div
 					className={color == "green" ? "green active" : "green"}
 					onClick={() => setColor("green")}></div>
+				<button className="stopstart" onClick={switchClockStatus}>
+					Start/Stop
+				</button>
 			</div>
 		</div>
 	);
